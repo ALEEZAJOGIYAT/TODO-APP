@@ -39,7 +39,7 @@ export class App {
             throw new Error('Database connection not set');
         }
 
-        this.app.use('/', IndexRoutes);
+        this.app.use('/', IndexRoutes); //for testing the app and all
         this.app.use('/api/users', createUserRoutes(this.db));
         this.app.use('/api/todos', createTodoRoutes(this.db));
     }

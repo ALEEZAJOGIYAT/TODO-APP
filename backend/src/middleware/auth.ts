@@ -30,7 +30,6 @@ export const optionalAuth = (req: AuthenticatedRequest, res: Response, next: Nex
         }
         next();
     } catch (error) {
-        // For optional auth, we don't fail if token is invalid, just continue without user
-        next();
+        throw error;
     }
 };
